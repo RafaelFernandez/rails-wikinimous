@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Wikinimous</span>
+  </div>
+</nav>
+<ul>
+<div class="container justify-content-center">
+  <% @articles.each do |article| %>
+
+    <li> <%= link_to article.title, article_path(article) %>
+        <%= link_to 'Delete article', article_path(article), method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+  </ul>
+  <%= link_to 'Add a new article', new_article_path %>
+</div>
